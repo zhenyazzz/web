@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    background-image: url(resourses/160738\ \(1\).jpg);
+
+}
+.container {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+section {
+    width: 55%;
+    background: beige;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+td {
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+}
+#displayText {
+    font-size: 18px;
+    font-weight: bold;
+}
+button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background: #555;
+}
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+aside ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+aside li {
+    padding: 20px 10px;  
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;  
+}

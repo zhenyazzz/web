@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Управление департаментами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Департаменты</h1>
+    
+
+    <form id="deptForm">
+        <select id="deptId">
+            <option value="">-- Новый департамент --</option>
+        </select>
+        <input type="text" id="name" placeholder="Название" required>
+        <input type="text" id="manager" placeholder="ФИО менеджера" required>
+        <input type="tel" id="phone" placeholder="Телефон" required>
+        <input type="number" id="employees" placeholder="Количество сотрудников" min="0" required>
+        <input type="text" id="address" placeholder="Юридический адрес" required>
+        
+        <button type="button" onclick="saveDepartment()">Сохранить</button>
+        <button type="button" onclick="clearForm()">Очистить</button>
+        <button type="button" onclick="deleteDepartment()">Удалить</button>
+    </form>
+
+  
+    <div>
+        <input type="text" id="newPropName" placeholder="Название свойства">
+        <input type="text" id="newPropValue" placeholder="Значение">
+        <button type="button" onclick="addProperty()">Добавить свойство</button>
+    </div>
+
+    <div>
+        <select id="propToRemove">
+            <option value="">-- Выберите свойство --</option>
+        </select>
+        <button type="button" onclick="removeProperty()">Убрать свойство</button>
+    </div>
+  
+    <button type="button" onclick="showAnalytics()">Показать аналитику</button>
+    <div id="analyticsResult" style="margin-top: 10px;"></div>
+
+   
+    <table id="deptTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Менеджер</th>
+                <th>Телефон</th>
+                <th>Сотрудников</th>
+                <th>Адрес</th>
+                <th>Доп. свойства</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</html>

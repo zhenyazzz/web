@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица с настройками</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>Настройки таблицы</header>
+    <nav></nav>
+
+    <div class="container">
+        <section>
+            <header>Выбор параметров</header>
+            <article>
+                <table>
+                    <tr onmouseover="showText(this)" onmouseout="hideText()">
+                        <td>AAA</td>
+                    </tr>
+                    <tr onmouseover="showText(this)" onmouseout="hideText()">
+                        <td>BBB</td>
+                    </tr>
+                    <tr onmouseover="showText(this)" onmouseout="hideText()">
+                        <td>CCC</td>
+                    </tr>
+                    <tr onmouseover="showText(this)" onmouseout="hideText()">
+                        <td>DDD</td>
+                    </tr>
+                </table>
+                <p id="displayText"></p>
+                <label>Фон:</label>
+                <select id="bgColor">
+                    <option value="yellow">Желтый</option>
+                    <option value="lightblue">Голубой</option>
+                    <option value="lightgray">Серый</option>
+                </select>
+                <label>Цвет текста:</label>
+                <select id="textColor">
+                    <option value="black">Черный</option>
+                    <option value="blue">Синий</option>
+                    <option value="red">Красный</option>
+                </select>
+                <label>Размер шрифта:</label>
+                <select id="fontSize">
+                    <option value="16px">16px</option>
+                    <option value="20px">20px</option>
+                    <option value="24px">24px</option>
+                </select>
+                <button onclick="applyStyles()">Применить стили</button>
+            </article>
+            <footer>Футер секции</footer>
+        </section>
+        <aside>
+            <h3>Дополнительная информация</h3>
+        </aside>
+    </div>
+    <footer>Подвал страницы</footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 10px;
+  background-image: url(resourses/29889529_7614318.jpg);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  margin: 0; 
+  height: 600px; 
+}
+
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: left;
+}
+
+footer {
+  margin-top: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border-color: bisque;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+label,
+input {
+  margin: 5px 0;
+}
+
+button {
+  margin-top: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+button:hover {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.rating-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-top: 8px;
+}
+.rating-option {
+  display: flex;
+  align-items: center;
+}
+
+.services-container {
+  font-family: "Segoe UI", Arial, sans-serif;
+  max-width: 300px;
+  margin: 10px;
+}
+
+.services-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 16px;
+}
+
+.service-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.service-checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  accent-color: #bb8d94; 
+  cursor: pointer;
+}
+
+.service-text {
+  font-size: 15px;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.service-text:hover {
+  color: #000;
+}

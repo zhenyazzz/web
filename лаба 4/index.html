@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Опрос туриста</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Опрос туриста</h1>
+      <nav></nav>
+    </header>
+    <article class="container">
+      <form id="surveyForm">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" list="previousUsers" required />
+
+        <datalist id="previousUsers"></datalist>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" required />
+
+        <div class="services-container">
+          <label class="services-label">Услуги турагентства:</label>
+
+          <div class="service-option">
+            <input type="checkbox" id="hotel" class="service-checkbox" />
+            <label for="hotel" class="service-text">Гостиница</label>
+          </div>
+
+          <div class="service-option">
+            <input type="checkbox" id="transfer" class="service-checkbox" />
+            <label for="transfer" class="service-text">Трансфер</label>
+          </div>
+
+          <div class="service-option">
+            <input type="checkbox" id="guide" class="service-checkbox" />
+            <label for="guide" class="service-text">Гид</label>
+          </div>
+        </div>
+
+        <label for="color">Любимый цвет:</label>
+        <input type="color" id="color" />
+
+        <label>Оцените качество услуг:</label>
+        <div class="rating-group">
+          <div class="rating-option">
+            <input type="radio" name="rating" value="Хорошо" id="good" />
+            <label for="good">Хорошо</label>
+          </div>
+          <div class="rating-option">
+            <input
+              type="radio"
+              name="rating"
+              value="Удовлетворительно"
+              id="average"
+            />
+            <label for="average">Удовлетворительно</label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" name="rating" value="Плохо" id="poor" />
+            <label for="poor">Плохо</label>
+          </div>
+        </div>
+
+        <label for="guests">Количество гостей:</label>
+        <input type="number" id="guests" min="1" max="10" step="1" />
+
+        <input type="hidden" id="formId" value="survey123" />
+
+        <button type="button" onclick="submitSurvey()">Отправить</button>
+      </form>
+    </article>
+
+    <footer>
+      <p>© 2025 Туристическое агентство. Все права защищены.</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
