@@ -1,13 +1,60 @@
 let departments = JSON.parse(localStorage.getItem('departments')) || [];
 let nextId = parseInt(localStorage.getItem('nextId')) || 1;
+let historyLog = JSON.parse(localStorage.getItem('historyLog')) || [];
 
 function saveData() {
     localStorage.setItem('departments', JSON.stringify(departments));
     localStorage.setItem('nextId', nextId.toString());
+    localStorage.setItem('historyLog', JSON.stringify(historyLog));
+}
+
+function addToHistory(action, id, details = {}) {
+    const entry = {
+        action,
+        id,
+        details
+    };
+    historyLog.unshift(entry); 
+    saveData();
+    renderHistory(); 
+}
+
+function renderHistory() {
+    const historyContainer = document.getElementById('historyContainer');
+    if (!historyContainer) return;
+    
+    historyContainer.innerHTML = `
+        <h3>История изменений</h3>
+        <div class="history-list">
+            ${historyLog.map(entry => `
+                <div class="history-entry">
+                    <span class="history-action">${formatHistoryAction(entry)}</span>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function formatHistoryAction(entry) {
+    switch(entry.action) {
+        case 'add':
+            return `Добавлен департамент ID: ${entry.id} (${entry.details.name})`;
+        case 'update':
+            return `Обновлен департамент ID: ${entry.id} (${entry.details.name})`;
+        case 'delete':
+            return `Удален департамент ID: ${entry.id}`;
+        case 'property_add':
+            return `Добавлено свойство "${entry.details.propName}" в департамент ID: ${entry.id}`;
+        case 'property_remove':
+            return `Удалено свойство "${entry.details.propName}" из департамента ID: ${entry.id}`;
+        default:
+            return `Выполнено действие: ${entry.action} с ID: ${entry.id}`;
+    }
 }
 
 function addDepartment(dept) {
     departments.push(dept);
+    addToHistory('add', dept.id, { name: dept.name });
     saveData();
 }
 
@@ -15,30 +62,23 @@ function updateDepartment(id, updatedDept) {
     const index = departments.findIndex(d => d.id === id);
     if (index !== -1) {
         departments[index] = updatedDept;
+        addToHistory('update', id, { name: updatedDept.name });
         saveData();
     }
 }
 
 function deleteDepartmentFromStorage(id) {
-    if (typeof id !== 'number' || id <= 0) {
-        console.error('Неверный ID департамента');
-        return false;
-    }
-
-    const initialLength = departments.length;
+    const dept = departments.find(d => d.id === id);
+    if (!dept) return false;
+    
     departments = departments.filter(d => d.id !== id);
-
-    if (departments.length === initialLength) {
-        console.warn(`Департамент с ID ${id} не найден`);
-        return false;
-    }
-
+    addToHistory('delete', id);
+    
     if (departments.length === 0) {
         nextId = 1;
     }
-
-    saveData();
     
+    saveData();
     return true;
 }
 
@@ -156,6 +196,7 @@ function addProperty() {
     if (dept) {
         dept.customProps = dept.customProps || {};
         dept.customProps[propName] = propValue;
+        addToHistory('property_add', id, { propName });
         saveData();
         renderTable();
         document.getElementById('newPropName').value = '';
@@ -199,10 +240,10 @@ function removeProperty() {
     if (!propName) return alert('Выберите свойство!');
     
     if (confirm(`Удалить свойство "${propName}" из всех департаментов?`)) {
-
         departments.forEach(dept => {
             if (dept.customProps && dept.customProps[propName]) {
                 delete dept.customProps[propName];
+                addToHistory('property_remove', dept.id, { propName });
             }
         });
         
@@ -217,5 +258,6 @@ function updateUI() {
     updateDeptList();
     updatePropertiesList(); 
     renderTable();
+    renderHistory();
     clearForm();
 }

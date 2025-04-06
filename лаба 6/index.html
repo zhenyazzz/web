@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">  <!-- Подключение CSS -->
+</head>
+<body>
+    <div id="departments-container">
+        <!-- Блоки отделов будут генерироваться JavaScript -->
+      </div>
+      
+      <div class="controls">
+        <!-- Управление фамилиями -->
+        <select id="dept-select">
+          <option value="1">Отдел 1</option>
+          <option value="2">Отдел 2</option>
+          <option value="3">Отдел 3</option>
+        </select>
+        
+        <select id="position-select">
+          <option value="start">В начало</option>
+          <option value="end">В конец</option>
+          <option value="before">Перед позицией</option>
+          <option value="after">После позиции</option>
+        </select>
+        
+        <input type="text" id="new-employee" placeholder="Фамилия сотрудника">
+        <button id="add-employee">Добавить фамилию</button>
+      
+        <!-- Управление заголовками -->
+        <select id="header-select">
+          <option value="1">Заголовок 1</option>
+          <option value="2">Заголовок 2</option>
+          <option value="3">Заголовок 3</option>
+        </select>
+        
+        <input type="text" id="new-header" placeholder="Новый заголовок">
+        <button id="change-header">Изменить заголовок</button>
+      </div>
+      <script src="app.js"></script>  <!-- Подключение JavaScript -->
+</body>
+</html>

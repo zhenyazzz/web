@@ -36,3 +36,34 @@ button:hover {
     background-color: bisque;
     transform: scale(1.05); 
 }
+
+
+.history-section {
+  margin-top: 30px;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.history-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 10px;
+  border: 1px solid #eee;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.history-entry {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+  font-family: monospace;
+}
+
+.history-time {
+  color: #666;
+  margin-right: 10px;
+}
+
+.history-action {
+  color: #333;
+}
