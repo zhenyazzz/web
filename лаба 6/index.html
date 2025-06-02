@@ -1,44 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">  <!-- Подключение CSS -->
+    <title>Регистрация сотрудников</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="departments-container">
-        <!-- Блоки отделов будут генерироваться JavaScript -->
-      </div>
-      
-      <div class="controls">
-        <!-- Управление фамилиями -->
-        <select id="dept-select">
-          <option value="1">Отдел 1</option>
-          <option value="2">Отдел 2</option>
-          <option value="3">Отдел 3</option>
-        </select>
-        
-        <select id="position-select">
-          <option value="start">В начало</option>
-          <option value="end">В конец</option>
-          <option value="before">Перед позицией</option>
-          <option value="after">После позиции</option>
-        </select>
-        
-        <input type="text" id="new-employee" placeholder="Фамилия сотрудника">
-        <button id="add-employee">Добавить фамилию</button>
-      
-        <!-- Управление заголовками -->
-        <select id="header-select">
-          <option value="1">Заголовок 1</option>
-          <option value="2">Заголовок 2</option>
-          <option value="3">Заголовок 3</option>
-        </select>
-        
-        <input type="text" id="new-header" placeholder="Новый заголовок">
-        <button id="change-header">Изменить заголовок</button>
-      </div>
-      <script src="app.js"></script>  <!-- Подключение JavaScript -->
+    <div class="main-container">
+        <h2>Регистрация сотрудников по отделам</h2>
+        <div id="departments-container"></div>
+        <div class="controls">
+            <h3>Управление сотрудниками</h3>
+            <div class="form-row">
+                <label for="dept-select">Отдел:</label>
+                <select id="dept-select">
+                    <option value="1">Отдел 1</option>
+                    <option value="2">Отдел 2</option>
+                    <option value="3">Отдел 3</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="position-select">Позиция:</label>
+                <select id="position-select">
+                    <option value="start">В начало</option>
+                    <option value="end">В конец</option>
+                    <option value="before">Перед выбранным</option>
+                    <option value="after">После выбранного</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="employee-select">Сотрудник:</label>
+                <select id="employee-select"></select>
+            </div>
+            <div class="form-row">
+                <label for="new-employee">Фамилия:</label>
+                <input type="text" id="new-employee" placeholder="Фамилия сотрудника">
+                <button id="add-employee">Добавить</button>
+            </div>
+            <hr>
+            <h3>Управление заголовками отделов</h3>
+            <div class="form-row">
+                <label for="header-select">Заголовок:</label>
+                <select id="header-select">
+                    <option value="1">Заголовок 1</option>
+                    <option value="2">Заголовок 2</option>
+                    <option value="3">Заголовок 3</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="new-header">Новый заголовок:</label>
+                <input type="text" id="new-header" placeholder="Новый заголовок">
+                <button id="change-header">Изменить</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>

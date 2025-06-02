@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обработанные слова</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Обработанные слова</h1>
+    <ol id="processedList"></ol>
+    <button onclick="window.location.href='index.html'">Назад</button>
+    <script>
+        fetch('/processed')
+            .then(res => res.json())
+            .then(data => {
+                const list = document.getElementById('processedList');
+                list.innerHTML = '';
+                data.words.forEach(word => {
+                    if (word.trim()) {
+                        const li = document.createElement('li');
+                        li.textContent = word;
+                        list.appendChild(li);
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

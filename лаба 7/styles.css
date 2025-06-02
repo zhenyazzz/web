@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #f9f6f2 0%, #f3e9dd 100%);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fffaf6;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(180, 140, 90, 0.10);
+    padding: 32px 28px 40px 28px;
+}
+
+h1 {
+    text-align: center;
+    color: #7c5c3b;
+    margin-bottom: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+button {
+    padding: 12px 22px;
+    background: #e7c9a9;
+    color: #7c5c3b;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(180, 140, 90, 0.08);
+    transition: background 0.2s, transform 0.2s, color 0.2s;
+}
+button:hover {
+    background: #d6b48a;
+    color: #5a3e22;
+    transform: translateY(-2px) scale(1.04);
+}
+
+.price-info {
+    background: #f6ede3;
+    color: #7c5c3b;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 0 auto 28px auto;
+    text-align: center;
+    font-size: 18px;
+    min-height: 40px;
+    max-width: 500px;
+    box-shadow: 0 1px 4px rgba(180, 140, 90, 0.04);
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 18px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #f9f6f2;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(180, 140, 90, 0.06);
+}
+
+th, td {
+    padding: 14px 10px;
+    text-align: center;
+}
+
+th {
+    background: #e7c9a9;
+    color: #7c5c3b;
+    font-weight: 600;
+    font-size: 15px;
+    border-right: 1px solid #f3e9dd;
+}
+
+tr:nth-child(even) td {
+    background: #f3e9dd;
+}
+
+tr:hover td {
+    background: #f6ede3;
+    transition: background 0.2s;
+}
+
+td {
+    font-size: 15px;
+    color: #7c5c3b;
+    border-right: 1px solid #f3e9dd;
+    border-bottom: 1px solid #f3e9dd;
+}
+
+td:last-child, th:last-child {
+    border-right: none;
+}
+
+.product-image {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(180, 140, 90, 0.10);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+    border: 2px solid #fffaf6;
+}
+.product-image:hover {
+    transform: scale(1.12) rotate(-2deg);
+    box-shadow: 0 4px 16px rgba(180, 140, 90, 0.18);
+    border: 2px solid #e7c9a9;
+} 
